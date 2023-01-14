@@ -26,8 +26,8 @@ public class UserController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    @GetMapping("/find/{username}")
-    public ResponseEntity<User> findUserByUsername(@PathVariable String username) {
-        return new ResponseEntity<>(user, HttpStatus.OK);
-    }
+//    @GetMapping("/find/{username}")
+//    public ResponseEntity<User> findUserByUsername(@PathVariable String username) {
+//        return new ResponseEntity<>(user, HttpStatus.OK);
+//    }
 }
