@@ -12,11 +12,15 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/images")
 public class ImageController {
 
+    @Autowired
+    ImageService imageService;
+
     @PostMapping("/create")
-    public ResponseEntity<Image> createAndReturn(@RequestBody Blog blog,
-                                                 @RequestParam String description,
+    public ResponseEntity<Image> createAndReturn(@RequestBody Blog blog, @RequestParam String description,
                                                  @RequestParam String dimensions) {
-        Image image = null;
+        //imageService.createAndReturn(blog,description,dimensions);
+        // Image image =null;
+        Image image = imageService.createAndReturn(blog,description,dimensions);
         return new ResponseEntity<>(image, HttpStatus.CREATED);
     }
 
@@ -28,6 +32,7 @@ public class ImageController {
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteImage(@PathVariable int id) {
+
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
