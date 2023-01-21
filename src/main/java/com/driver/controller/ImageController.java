@@ -26,15 +26,25 @@ public class ImageController {
 
     @GetMapping("/countImagesInScreen/{id}/{screenDimensions}")
     public ResponseEntity<Integer> countImagesInScreen(@PathVariable int id, @PathVariable String screenDimensions){
-        int count = 0;
+        Image image = imageService.findById(id);
+        if(image == null) {
+            return new ResponseEntity<>(0, HttpStatus.NOT_FOUND);
+        }
+        int count = imageService.countImagesInScreen(image, screenDimensions);
         return new ResponseEntity<>(count, HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteImage(@PathVariable int id) {
 
+        Image image = imageService.findById(id);
+        if(image == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        imageService.deleteImage(image);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+
 }
 
 
