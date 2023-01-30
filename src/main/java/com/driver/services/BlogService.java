@@ -60,9 +60,9 @@ public class BlogService {
     public void addImage(Integer blogId, String description, String dimensions){
         //add an image to the blog after creating it
         Blog blog = blogRepository1.findById(blogId).get();
-        List<Image> images = blog.getImageList();
-
         Image image = imageService1.createAndReturn(blog,description,dimensions);
+        List<Image> images = blog.getImageList();
+        images.add(image);
         blog.setImageList(images);
 
         blogRepository1.save(blog); //Just calling the parent repository and child repository will automatically be called.

@@ -7,10 +7,7 @@ import java.util.List;
 
 @Table
 @Entity
-
 public class User {
-
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,15 +24,6 @@ public class User {
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
     private List<Blog> blogList;
 
-    public User() {
-    }
-
-    public User(String username, String password, String firstName, String lastName) {
-        this.username = username;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
 
     public int getUserId() {
         return userId;

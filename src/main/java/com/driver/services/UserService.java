@@ -13,8 +13,8 @@ public class UserService {
     @Autowired
     UserRepository userRepository3;
 
-    @Autowired
-    BlogService blogService3;
+//    @Autowired
+//    BlogService blogService3;
 
     public void createUser(User user){
         userRepository3.save(user);

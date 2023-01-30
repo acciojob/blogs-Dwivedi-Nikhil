@@ -1,7 +1,5 @@
 package com.driver.models;
-//import jdk.jfr.Timespan;
 import org.hibernate.annotations.CreationTimestamp;
-
 import javax.persistence.*;
 
 import java.util.*;

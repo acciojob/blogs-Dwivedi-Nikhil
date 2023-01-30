@@ -18,8 +18,6 @@ public class ImageController {
     @PostMapping("/create")
     public ResponseEntity<Image> createAndReturn(@RequestBody Blog blog, @RequestParam String description,
                                                  @RequestParam String dimensions) {
-        //imageService.createAndReturn(blog,description,dimensions);
-        // Image image =null;
         Image image = imageService.createAndReturn(blog,description,dimensions);
         return new ResponseEntity<>(image, HttpStatus.CREATED);
     }
