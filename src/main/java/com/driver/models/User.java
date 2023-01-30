@@ -25,7 +25,7 @@ public class User {
     private List<Blog> blogList;
 
 
-    public int getUserId() {
+    public int getId() {
         return userId;
     }
 
