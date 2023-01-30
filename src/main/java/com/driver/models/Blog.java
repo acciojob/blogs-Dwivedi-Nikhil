@@ -39,11 +39,11 @@ public class Blog {
         //noArgsConstructor
     }
 
-    public int getBlogId() {
+    public int getId() {
         return blogId;
     }
 
-    public void setBlogId(int blogId) {
+    public void setId(int blogId) {
         this.blogId = blogId;
     }
 
